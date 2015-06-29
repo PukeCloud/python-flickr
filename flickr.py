@@ -238,7 +238,7 @@ class FlickrAPI(object):
                 req = urllib2.Request(http_url, body, self.headers)
                 try:
                     req = urllib2.urlopen(req)
-                except urllib2.HTTPError, e:
+                except urllib2.HTTPError as e:
                     # Making a fake resp var because urllib2.urlopen doesn't
                     # return a tuple like OAuth2 client.request does
                     resp = {'status': e.code}
